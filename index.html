@@ -682,21 +682,23 @@
     .buy-cta { text-align: center; margin-top: 56px; }
 
     /* ========== VIDEO ========== */
-    #video-section { background: var(--dark); text-align: center; }
+    #video-section { background: var(--dark2); text-align: center; }
     .video-box {
-      max-width: 860px; margin: 56px auto 0;
-      aspect-ratio: 16/9;
-      background: var(--dark2);
-      border: 1px solid rgba(245,166,35,0.12);
+      max-width: 920px; margin: 56px auto 0;
       position: relative;
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; gap: 16px;
+      border: 1px solid rgba(245,166,35,0.15);
       overflow: hidden;
+      background: #000;
+      box-shadow: 0 0 60px rgba(255,45,45,0.08), 0 0 120px rgba(245,166,35,0.05);
+    }
+    .video-box video {
+      display: block; width: 100%; height: auto;
+      max-height: 80vh;
     }
     .video-box::before {
       content: '';
       position: absolute; inset: 0;
-      background: radial-gradient(ellipse at center, rgba(255,45,45,0.06), transparent 60%);
+      background: radial-gradient(ellipse at center, rgba(255,45,45,0.04), transparent 60%);
     }
     .vid-corner {
       position: absolute; width: 30px; height: 30px;
@@ -705,27 +707,7 @@
     .v-tr { top: 0; right: 0; border-top: 2px solid var(--gold); border-right: 2px solid var(--gold); }
     .v-bl { bottom: 0; left: 0; border-bottom: 2px solid var(--gold); border-left: 2px solid var(--gold); }
     .v-br { bottom: 0; right: 0; border-bottom: 2px solid var(--red); border-right: 2px solid var(--red); }
-    .play-ring {
-      width: 90px; height: 90px; border-radius: 50%;
-      border: 1px solid rgba(245,166,35,0.3);
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(245,166,35,0.06);
-      animation: vidPulse 2.5s ease-in-out infinite;
-      position: relative; z-index: 1;
-    }
-    .play-ico { font-size: 36px; }
-    @keyframes vidPulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(245,166,35,0.3); }
-      50% { box-shadow: 0 0 0 24px rgba(245,166,35,0); }
-    }
-    .vid-label {
-      font-family: var(--font-main); font-size: 14px; letter-spacing: 3px; color: white;
-      position: relative; z-index: 1;
-    }
-    .vid-sub {
-      font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px;
-      color: rgba(255,255,255,0.25); position: relative; z-index: 1;
-    }
+    .video-box video:focus { outline: none; }
 
     /* ========== COMMUNITY ========== */
     #community { background: var(--dark2); text-align: center; }
@@ -958,6 +940,30 @@
   </div>
 </div>
 
+<!-- VIDEO — after hero -->
+<section id="video-section">
+  <div class="container">
+    <div style="text-align:center;" class="reveal">
+      <div class="s-label" style="justify-content:center;">OUR STORY</div>
+      <h2 class="s-title">Watch the <span class="grad">Vision</span></h2>
+      <div class="s-line" style="justify-content:center;"></div>
+      <p style="color:var(--muted);font-size:15px;max-width:500px;margin:0 auto;line-height:1.7;">
+        The spirit of Turkish-Spanish friendship — in motion.
+      </p>
+    </div>
+    <div class="video-box reveal">
+      <div class="vid-corner v-tl"></div>
+      <div class="vid-corner v-tr"></div>
+      <div class="vid-corner v-bl"></div>
+      <div class="vid-corner v-br"></div>
+      <video controls preload="auto">
+        <source src="videos/trwl.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section id="about">
   <div class="container">
@@ -1171,28 +1177,6 @@
   </div>
 </section>
 
-<!-- VIDEO -->
-<section id="video-section">
-  <div class="container">
-    <div style="text-align:center;" class="reveal">
-      <div class="s-label" style="justify-content:center;">OUR STORY</div>
-      <h2 class="s-title">Watch the <span class="grad">Vision</span></h2>
-      <div class="s-line" style="justify-content:center;"></div>
-    </div>
-    <div class="video-box reveal">
-      <div class="vid-corner v-tl"></div>
-      <div class="vid-corner v-tr"></div>
-      <div class="vid-corner v-bl"></div>
-      <div class="vid-corner v-br"></div>
-      <div class="play-ring">
-        <span class="play-ico">&#9654;</span>
-      </div>
-      <div class="vid-label">COMMUNITY VIDEO</div>
-      <div class="vid-sub">COMING SOON — STAY TUNED</div>
-    </div>
-  </div>
-</section>
-
 <!-- COMMUNITY -->
 <section id="community">
   <div class="container">
@@ -1208,7 +1192,7 @@
       <a href="https://x.com/ToroWolfESTR" target="_blank" class="sc-card tw reveal">
         <span class="sc-ico">&#120143;</span>
         <span class="sc-name">TWITTER / X</span>
-        <span class="sc-handle">@ToroWolfESTR</span>
+        <span class="sc-handle">@ToroWolfESTRvide</span>
       </a>
       <a href="https://t.me/+sAgL7Jd7Ux5mNmVk" target="_blank" class="sc-card tg reveal delay1">
         <span class="sc-ico">&#128172;</span>
